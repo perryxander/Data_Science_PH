@@ -1,0 +1,72 @@
+---
+title: "Simple document"
+author: Alex Perry
+date: July 2021
+output: 
+  github_document
+   
+---
+
+I'm an R Markdown document! 
+
+# Section 1
+
+Here's a **code chunk** that samples from 
+a _normal distribution_:
+
+```{r}
+samp = rnorm(100)
+length(samp)
+```
+
+# Section 2
+
+I can take the mean of the sample, too!
+The mean is `r mean(samp)`.
+
+The code chunk below creates a datafraem and generates a plot.
+
+## Data frame and plot
+
+```{r plot_example, message = FALSE}
+library(tidyverse)
+
+plot_df = tibble(
+  x = rnorm(500, mean = 2, sd = 4),
+  y = 3 - 4.2 * x + rnorm(500)
+  
+)
+
+ggplot(plot_df, aes(x = x, y = y)) + geom_point()
+```
+
+This plot is really great!! It shows a linear relationship just as expected.
+
+
+The data frame has `r nrow(plot_df)` rows.
+
+# Section 3
+
+Here is a list:
+
+* This is my first list item
+* Lists need at least two items
+  * this list has a sub item
+* Third list item
+
+Col 1 | Col 2
+------|--------
+a     |    b
+c     |    c
+d     |    e
+
+> This is a block quote
+
+
+
+
+
+
+
+
+
